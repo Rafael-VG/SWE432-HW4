@@ -9,9 +9,9 @@ function fail($message, $status = 400) {
 }
 
 require_once "db.php";
-require_once "classes/Student.php";
-require_once "classes/Course.php";
-require_once "classes/Prerequisite.php";
+require_once "classes/student.php";
+require_once "classes/course.php";
+require_once "classes/prerequisite.php";
 require_once "classes/enrollment.php";
 require_once "classes/recordmanager.php";
 require_once "classes/transcript.php";
