@@ -27,18 +27,18 @@ CREATE TABLE IF NOT EXISTS course_prerequisites (
 );
 
 CREATE TABLE IF NOT EXISTS enrollments (
-  id SERIAL PRIMARY KEY, student_id INTEGER NOT NULL, 
-  student_id INTEGER NOT NULL, 
-  course_id INTEGER NOT NULL, 
-  grade VARCHAR(2) NOT NULL,
+    id SERIAL PRIMARY KEY,
+    student_id INTEGER NOT NULL,
+    course_id INTEGER NOT NULL,
+    grade VARCHAR(2) NOT NULL,
 
-  FOREIGN KEY (student_id) REFERENCES students(id),
-  FOREIGN KEY (course_id) REFERENCES courses(id), 
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (course_id) REFERENCES courses(id),
 
-  UNIQUE (student_id, course_id),
+    UNIQUE (student_id, course_id),
 
-  CHECK (grade IN (
-    'A', 'A-', 'B+', 'B', 'B-',
-    'C+', 'C', 'C-', 'D', 'F'
-  ))
+    CHECK (grade IN (
+        'A', 'A-', 'B+', 'B', 'B-',
+        'C+', 'C', 'C-', 'D', 'F'
+    ))
 );
